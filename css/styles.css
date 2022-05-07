@@ -37,8 +37,104 @@ textarea{
     resize: none;
 }
 
+label{
+    color: gray;
+}
+
+label::before{
+    content: '';
+    display: inline-flex;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    margin-right: 10px;
+}
+
+.form-control{
+    font-weight: 300;
+}
+
 .row{
     padding: 15px;
+}
+
+.btn{
+    width: 100%;
+    border: none;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn:hover{
+    background-color: var(--color-primary-light);
+    color: white;
+}
+
+.btn-sec{
+    width: 100%;
+    border: none;
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+.btn-sec:hover{
+    background-color: var(--color-dark);
+    color: white;
+}
+
+.btn-delete{
+    width: 100%;
+    border: none;
+    background-color: red;
+    color: white;
+}
+
+.btn-delete:hover{
+    background-color: darkred;
+    color: white;
+}
+
+.github-input{
+    display: none;
+}
+
+.btn-github{
+    background-color: black;
+    color: white;
+}
+
+.btn-github:hover{
+    background-color: #2b2b2b;
+    color: white;
+}
+
+.linkedin-input{
+    display: none;
+}
+
+.btn-linkedin{
+    background-color: #0077B5;
+    color: white;
+}
+
+.btn-linkedin:hover{
+    background-color: #00a9ff;
+    color: white;
+}
+
+.website-input{
+    display: none;
+}
+
+.btn-website{
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-website:hover{
+    background-color: var(--color-primary-light);
+    color: white;
 }
 
 header{
@@ -66,17 +162,16 @@ header .github{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: var(--color-primary);
+    border-radius: 5px;
+    background-color: black;
     color: white;
+    padding: 10px 15px;
     transition: all 0.5s ease;
 }
 
 header .github:hover{
     cursor: pointer;
-    background-color: var(--color-primary-light);
+    background-color: #2b2b2b;
 }
 
 header .github i{
@@ -86,30 +181,4 @@ header .github i{
 
 .selector-for-some-widget {
     box-sizing: content-box;
-}
-
-@media sceen and (max-width: 990px){
-    header .title:hover{
-        display: none;
-        animation: title-animation .5s ease;
-    }
-}
-
-@keyframes title-animation {
-    
-    0%{
-        display: inline;
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    50%{
-        transform: translateY(-15px);
-        opacity: .5;
-    }
-
-    100%{
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
