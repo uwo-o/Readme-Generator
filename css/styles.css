@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap');
+
+:root{
+    --color-primary: #83C9F4;
+    --color-primary-light: #A3D5FF;
+    --color-secondary: #6F73D2;
+    --color-dark: #7681B3;
+    --color-light: #D9F0FF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    background-color: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header .title{
+    color: var(--color-primary);
+    display: flex;
+    transition: all 0.5s ease;
+}
+
+header .title span{
+    display: none;
+    animation: title-animation .5s ease;
+}
+
+header .title:hover{
+    cursor: pointer;
+    color: var(--color-primary);
+}
+
+header .title:hover span{
+    display: inline;
+    color: var(--color-primary-light);
+}
+
+header .github{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: white;
+    transition: all 0.5s ease;
+}
+
+header .github:hover{
+    cursor: pointer;
+    background-color: var(--color-primary-light);
+}
+
+header .github i{
+    font-size: 20px;
+    color: white;
+}
+
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+@media sceen and (max-width: 990px){
+    header .title:hover{
+        display: none;
+        animation: title-animation .5s ease;
+    }
+}
+
+@keyframes title-animation {
+    
+    0%{
+        display: inline;
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    50%{
+        transform: translateY(-15px);
+        opacity: .5;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
