@@ -1,16 +1,20 @@
 var counter_contributors=1;
 
+if(counter_contributors==1){
+    $("#btn-delete-contributor").hide();
+}
+
 $('#btn-add-contributor').click(function(e){
     e.preventDefault();
-    var contributors_html = `
+    let contributors_html = `
     <div class="row" id="input-contributors-`+counter_contributors+`">\
-        <div class="col-md-4">\
+        <div class="col-md-3">\
             <div class="row">\
-                <label for="contributor-`+counter_contributors+`">Contributor</label>\
+                <label for="contributor-`+counter_contributors+`">Contributor `+counter_contributors+`</label>\
                 <input type="text" class="form-control" name="contributor-`+counter_contributors+`" id="contributor-`+counter_contributors+`">\
             </div>\
         </div>\
-        <div class="col-md-2">\
+        <div class="col-md-3">\
             <div class="row">\
                 <div class="github-button">\
                     <label for="btn-github">Add</label>\
@@ -22,7 +26,7 @@ $('#btn-add-contributor').click(function(e){
                 </div>\
             </div>\
         </div>\
-        <div class="col-md-2">\
+        <div class="col-md-3">\
             <div class="row">\
                 <div class="linkedin-button">\
                     <label for="btn-linkedin">Add</label>\
@@ -34,7 +38,7 @@ $('#btn-add-contributor').click(function(e){
                 </div>\
             </div>\
         </div>\
-        <div class="col-md-2">\
+        <div class="col-md-3">\
             <div class="row">\
                 <div class="website-button">\
                     <label for="btn-website">Add</label>\
@@ -46,21 +50,21 @@ $('#btn-add-contributor').click(function(e){
                 </div>\
             </div>\
         </div>\
-        <div class="col-md-2">\
-            <div class="row">\
-                <label for="btn-remove-contributor">Delete</label>\
-                <button class="btn btn-delete" id="btn-delete">X</button>\
-            </div>\
-        </div>\
     </div>\
     `;
     $('#contributors_container').append(contributors_html);
     counter_contributors++;
+    $("#btn-delete-contributor").show();
 });
 
-$(document).on('click', '.btn-delete', function(e){
+$(document).on('click', '#btn-delete-contributor', function(e){
     e.preventDefault();
-    $(this).parent().parent().parent().remove();
+    counter_contributors--;
+    if(counter_contributors<=1){
+        counter_contributors=1;
+        $(this).hide();
+    }
+    $("#input-contributors-"+counter_contributors).remove();
 });
 
 $(document).on('click', '.btn-github', function(e){
