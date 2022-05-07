@@ -26,33 +26,39 @@ a{
     text-decoration: none;
 }
 
+h2{
+    color: gray;
+    margin-bottom: 25px;
+}
+
+textarea{
+    width: 100%;
+    height: 100%;
+    resize: none;
+}
+
+.row{
+    padding: 15px;
+}
+
 header{
     background-color: white;
     padding: 10px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 
 }
 
 header .title{
     color: var(--color-primary);
     display: flex;
+    font-size: small;
     transition: all 0.5s ease;
 }
 
 header .title span{
-    display: none;
-    animation: title-animation .5s ease;
-}
-
-header .title:hover{
-    cursor: pointer;
-    color: var(--color-primary);
-}
-
-header .title:hover span{
-    display: inline;
     color: var(--color-primary-light);
 }
 
