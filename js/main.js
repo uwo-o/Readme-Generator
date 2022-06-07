@@ -18,3 +18,126 @@ var typed3 = new Typed('.typed-generator', {
     startDelay: 2000,
     showCursor: false,
 });
+
+let create_md = $('#create-md');
+
+create_md.click(function (e) {
+
+    let contributors = [];
+    let installation = [];
+    let usage = [];
+
+    e.preventDefault();
+    let title = $('#project-title').val();
+    let description = $('#project-description').val();
+    let author = $('#project-author').val();
+    let author_url = $('#project-author-github').val();
+    let license = $('#project-license').val();
+    let license_url = $('#project-license-url').val();
+    let version = $('#project-version').val();
+    let repository = $('#repository-name').val();
+    let repository_url = $('#repository-url').val();
+
+    for(let i=0; i<counter_contributors-1; i++){
+
+        let social_media = [];
+
+        let contributor = $('#contributor-'+i).val();
+        if($('#github-input-'+i).val()){
+            social_media.push({
+                "name": "Github",
+                "url": $('#github-input-'+i).val()
+            });
+        }
+        if($('#linkedin-input-'+i).val()){
+            social_media.push({
+                "name": "Linkedin",
+                "url": $('#linkedin-input-'+i).val()
+            });
+        }
+        if($('#website-input-'+i).val()){
+            social_media.push({
+                "name": "Website",
+                "url": $('#website-input-'+i).val()
+            });
+        }
+
+        contributors.push({
+            name: contributor,
+            social_media: social_media
+        });
+    }
+
+    for(let i=0; i<counter_installation_step-1; i++){
+        let installation_step = $('#step'+i+'-title').val();
+        let installation_step_description = $(`#step${i}-description`).val();
+
+        let command_step = [];
+
+        for(let j=0; j<counter_installation_command[i]; j++){
+            let installation_command = $('#step'+i+'-command'+j).val();
+            command_step.push(installation_command);
+        }
+
+        installation.push({
+            step: i+1,
+            title: installation_step,
+            description: installation_step_description,
+            commands: command_step
+        });
+    }
+
+    for(let i=0; i<counter_usage_step-1; i++){
+        let usage_step = $('#usage'+i+'-title').val();
+        let usage_step_description = $(`#usage${i}-description`).val();
+
+        let command_step = [];
+        let input_step = [];
+
+        for(let j=0; j<counter_usage_command[i]; j++){
+            let usage_command = $('#usage'+i+'-command'+j).val();
+            command_step.push(usage_command);
+        }
+
+        for(let j=0; j<counter_usage_input[i]; j++){
+            let usage_input = $('#usage'+i+'-input'+j).val();
+            let usage_input_url = $('#usage'+i+'-input-url'+j).val();
+            let usage_input_description = $(`#usage${i}-input-description${j}`).val();
+            input_step.push({
+                name: usage_input,
+                url: usage_input_url,
+                description: usage_input_description
+            });
+        }
+
+        usage.push({
+            step: i+1,
+            title: usage_step,
+            description: usage_step_description,
+            commands: command_step,
+            input: input_step
+        });
+    }
+    let languages_list=languages_tags;
+    let technologies_list=frameworks_tags;
+    let keywords_list=keywords_tags;
+
+    let input_json = {
+        "title": title,
+        "description": description,
+        "author": author,
+        "author_url": author_url,
+        "license": license,
+        "license_url": license_url,
+        "version": version,
+        "repository": repository,
+        "repository_url": repository_url,
+        "contributors": contributors,
+        "installation": installation,
+        "usage": usage,
+        "languages": languages_list,
+        "technologies": technologies_list,
+        "keywords": keywords_list
+    };
+    console.log(input_json);
+});
