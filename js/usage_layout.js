@@ -16,12 +16,12 @@ $(".btn-add-usage-step").click(function(e){
                     <h4>Step `+counter_usage_step+`</h4>\
                 </div>\
                 <div class="row">\
-                    <label for="step`+counter_usage_step+`-title">Title</label>\
-                    <input type="text" class="form-control" name="step`+counter_usage_step+`-title" id="step`+counter_usage_step+`-title">\
+                    <label for="usage`+counter_usage_step+`-title">Title</label>\
+                    <input type="text" class="form-control" name="usage`+counter_usage_step+`-title" id="usage`+counter_usage_step+`-title">\
                 </div>\
                 <div class="row">\
-                    <label for="step`+counter_usage_step+`-description">Description</label>\
-                    <input name="step`+counter_usage_step+`-description" class="form-control" id="step`+counter_usage_step+`-description">\
+                    <label for="usage`+counter_usage_step+`-description">Description</label>\
+                    <input name="usage`+counter_usage_step+`-description" class="form-control" id="usage`+counter_usage_step+`-description">\
                 </div>\
                 <div class="container" id="container-usage-commands-`+counter_usage_step+`">\
                 </div>
@@ -81,7 +81,7 @@ $(document).on('click', '.btn-add-usage-command', function(e){
             <div class="form-group">\
                 <div class="row">\
                     <label>Command `+counter_usage_command[id_step]+`</label>\
-                    <input type="text" class="form-control" name="step`+id_step+`-command`+counter_usage_command[id_step]+`" id="step`+id_step+`-command`+counter_usage_command[id_step]+`">\
+                    <input type="text" class="form-control" name="usage`+id_step+`-command`+counter_usage_command[id_step]+`" id="usage`+id_step+`-command`+counter_usage_command[id_step]+`">\
                 </div>\
             </div>\
         </div>\
@@ -104,11 +104,11 @@ $(document).on('click', '.btn-add-usage-input', function(e){
             <div class="form-group">\
                 <div class="row">\
                     <label>Name</label>\
-                    <input type="text" class="form-control" name="step`+id_step+`-input`+counter_usage_input[id_step]+`" id="step`+id_step+`-input`+counter_usage_input[id_step]+`">\
+                    <input type="text" class="form-control" name="usage`+id_step+`-input`+counter_usage_input[id_step]+`" id="usage`+id_step+`-input`+counter_usage_input[id_step]+`">\
                 </div>\
                 <div class="row">\
                     <label>Url</label>\
-                    <input type="text" class="form-control" name="step`+id_step+`-input-url`+counter_usage_input[id_step]+`" id="step`+id_step+`-input-url`+counter_usage_input[id_step]+`">\
+                    <input type="text" class="form-control" name="usage`+id_step+`-input-url`+counter_usage_input[id_step]+`" id="usage`+id_step+`-input-url`+counter_usage_input[id_step]+`">\
                 </div>\
             </div>\
         </div>\
@@ -116,7 +116,7 @@ $(document).on('click', '.btn-add-usage-input', function(e){
             <div class="form-group" style="height: 95%;">\
                 <div class="row" style="height: 100%;">\
                     <label>Description</label>\
-                    <textarea type="text" class="form-control" name="step`+id_step+`-input-description`+counter_usage_input[id_step]+`" id="step`+id_step+`-input-description`+counter_usage_input[id_step]+`"></textarea>\
+                    <textarea type="text" class="form-control" name="usage`+id_step+`-input-description`+counter_usage_input[id_step]+`" id="usage`+id_step+`-input-description`+counter_usage_input[id_step]+`"></textarea>\
                 </div>\
             </div>\
         </div>\
