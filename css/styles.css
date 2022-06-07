@@ -72,6 +72,68 @@ label::before{
     padding: 15px;
 }
 
+.tag-box{
+    border-radius: .25rem;
+    border: 1px solid #ced4da;
+    padding: 0 15px;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--color-dark);
+    outline: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    transition: all 0.3s;
+    list-style: none;
+}
+
+.tag-box .tag{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: .25rem;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s;
+}
+
+.tag-box .tag .close-tag{
+    font-size: 14px;
+    margin: 5px;
+    cursor: pointer;
+    color: var(--color-primary);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--color-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.tag-box .tag .close-tag:hover{
+    transform: scale(1.1);
+}
+
+.tag-box #languages, .tag-box #frameworks, .tag-box #keywords{
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.tag-box #languages:focus, .tag-box #frameworks:focus, .tag-box #keywords:focus{
+    border: none !important;
+    outline: none !important;
+}
+
 .btn{
     width: 100%;
     border: none;
