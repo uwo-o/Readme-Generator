@@ -47,12 +47,15 @@ keywords_input.on('keyup', function (e) {
 ul.on('click', '.close-tag', function () {
     $(this).parent().remove();
     if($(this).parent().hasClass('languages')) {
-        languages_tags.splice(languages_tags.indexOf($(this).text()), 1);
+        let index = languages_tags.indexOf($(this).parent().text());
+        languages_tags.splice(index, 1);
     }
     else if($(this).parent().hasClass('frameworks')) {
-        frameworks_tags.splice(frameworks_tags.indexOf($(this).text()), 1);
+        let index = frameworks_tags.indexOf($(this).parent().text());
+        frameworks_tags.splice(index, 1);
     }
     else if($(this).parent().hasClass('keywords')) {
-        keywords_tags.splice(keywords_tags.indexOf($(this).text()), 1);
+        let index = keywords_tags.indexOf($(this).parent().text());
+        keywords_tags.splice(index, 1);
     }
 });
