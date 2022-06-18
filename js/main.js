@@ -38,7 +38,7 @@ create_md.click(function (e) {
     let repository = $('#repository-name').val();
     let repository_url = $('#repository-url').val();
 
-    for(let i=0; i<counter_contributors-1; i++){
+    for(let i=1; i<counter_contributors; i++){
 
         let social_media = [];
 
@@ -68,26 +68,29 @@ create_md.click(function (e) {
         });
     }
 
-    for(let i=0; i<counter_installation_step-1; i++){
+    for(let i=1; i<counter_installation_step; i++){
         let installation_step = $('#step'+i+'-title').val();
         let installation_step_description = $(`#step${i}-description`).val();
 
         let command_step = [];
 
         for(let j=0; j<counter_installation_command[i]; j++){
-            let installation_command = $('#step'+i+'-command'+j).val();
+            let installation_command = "";
+            if($('#step'+i+'-command'+j).val()){
+                installation_command = $('#step'+i+'-command'+j).val();
+            }
             command_step.push(installation_command);
         }
 
         installation.push({
-            step: i+1,
+            step: (i).toString(),
             title: installation_step,
             description: installation_step_description,
             commands: command_step
         });
     }
 
-    for(let i=0; i<counter_usage_step-1; i++){
+    for(let i=1; i<counter_usage_step; i++){
         let usage_step = $('#usage'+i+'-title').val();
         let usage_step_description = $(`#usage${i}-description`).val();
 
@@ -95,14 +98,28 @@ create_md.click(function (e) {
         let input_step = [];
 
         for(let j=0; j<counter_usage_command[i]; j++){
-            let usage_command = $('#usage'+i+'-command'+j).val();
+            let usage_command = "";
+            if($('#usage'+i+1+'-command'+j).val()){
+                usage_command = $('#usage'+i+'-command'+j).val();
+            }
             command_step.push(usage_command);
         }
 
         for(let j=0; j<counter_usage_input[i]; j++){
-            let usage_input = $('#usage'+i+'-input'+j).val();
-            let usage_input_url = $('#usage'+i+'-input-url'+j).val();
-            let usage_input_description = $(`#usage${i}-input-description${j}`).val();
+
+            let usage_input = "";
+            let usage_input_url = "";
+            let usage_input_description = "";
+
+            if( $('#usage'+i+'-input'+j).val()){
+                usage_input = $('#usage'+i+'-input'+j).val();
+            }
+            if($('#usage'+i+'-input-url'+j).val()){
+                usage_input_url = $('#usage'+i+'-input-url'+j).val();
+            }
+            if($(`#usage${i}-input-description${j+1}`).val()){
+                usage_input_description = $(`#usage${i}-input-description${j+1}`).val();
+            }
             input_step.push({
                 name: usage_input,
                 url: usage_input_url,
@@ -111,7 +128,7 @@ create_md.click(function (e) {
         }
 
         usage.push({
-            step: i+1,
+            step: (i).toString(),
             title: usage_step,
             description: usage_step_description,
             commands: command_step,
@@ -124,6 +141,7 @@ create_md.click(function (e) {
 
     let input_json = {
         "title": title,
+        "url": "",
         "description": description,
         "author": author,
         "author_url": author_url,
@@ -139,5 +157,16 @@ create_md.click(function (e) {
         "technologies": technologies_list,
         "keywords": keywords_list
     };
-    console.log(input_json);
+    const API_URL = 'https://api-readme-generator.herokuapp.com/create_md';
+
+    axios.post(API_URL, input_json)
+
+        .then(function (response) {
+            console.log(input_json);
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        }
+    );
 });
