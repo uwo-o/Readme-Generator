@@ -20,7 +20,6 @@ var typed3 = new Typed('.typed-generator', {
 });
 
 let create_md = $('#create-md');
-
 create_md.click(function (e) {
 
     let contributors = [];
@@ -162,8 +161,20 @@ create_md.click(function (e) {
     axios.post(API_URL, input_json)
 
         .then(function (response) {
-            console.log(input_json);
-            console.log(response);
+            $('#result').empty();
+            let html=`
+                <div class="container">\
+                <div class="row">\
+                    <hr>\
+                    <h2>Generated file:</h2>\
+                </div>\
+                <div class="row">\
+                    <textarea name="output" id="output">`+response.data+`</textarea>\
+                </div>\
+            </div>\
+            `;
+            $('#result').append(html);
+            location.hash('#result');
         })
         .catch(function (error) {
             console.log(error);
