@@ -48,7 +48,7 @@ Press the button generate for generate the Markdown file
 
 * Languages used to create it: 
 
-![CSS3](https://img.shields.io/badge/CSS3-ffffff?style=for-the-badge&logo=CSS3&logoColor=black) ![HTML5](https://img.shields.io/badge/HTML5-ffffff?style=for-the-badge&logo=HTM5L&logoColor=black) ![JavaScript](https://img.shields.io/badge/JavaScript-ffffff?style=for-the-badge&logo=JavaScript&logoColor=black) 
+![CSS3](https://img.shields.io/badge/CSS3-ffffff?style=for-the-badge&logo=CSS3&logoColor=black) ![HTML5](https://img.shields.io/badge/HTML5-ffffff?style=for-the-badge&logo=HTML5L&logoColor=black) ![JavaScript](https://img.shields.io/badge/JavaScript-ffffff?style=for-the-badge&logo=JavaScript&logoColor=black) 
 
 ## Technologies
 
