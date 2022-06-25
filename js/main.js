@@ -174,7 +174,9 @@ create_md.click(function (e) {
             </div>\
             `;
             $('#result').append(html);
-            location.hash('#result');
+            $('html,body').animate({
+                scrollTop: $('#result').offset().top
+            }, 300);
         })
         .catch(function (error) {
             console.log(error);
