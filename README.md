@@ -1,6 +1,10 @@
 # Readme Generator
 [![Version](https://img.shields.io/badge/version-1.1.a3-brightgreen.svg)]()
 
+This is a simple website made in vanilla JavaScript, using Bootstrap for the style. You can insert your project data in this website to get aReadme.md file.
+
+The API used is API Readme Generator, that is in my repositories.
+
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
@@ -50,7 +54,7 @@ Press the button generate for generate the Markdown file
 
 * Technologies used to create it: 
 
-![Bootstrap](https://img.shields.io/badge/Bootstrap-ffffff?style=for-the-badge&logo=Bootstrap&logoColor=black) ![Jquery](https://img.shields.io/badge/Jquery-ffffff?style=for-the-badge&logo=Jquery&logoColor=black) 
+![Bootstrap](https://img.shields.io/badge/Bootstrap-ffffff?style=for-the-badge&logo=Bootstrap&logoColor=black) ![JQuery](https://img.shields.io/badge/Jquery-ffffff?style=for-the-badge&logo=Jquery&logoColor=black) 
 
 ![Web](https://img.shields.io/badge/Web-ffffff?style=for-the-badge&logo=Web&logoColor=black) ![readme](https://img.shields.io/badge/readme-ffffff?style=for-the-badge&logo=readme&logoColor=black) ![generator](https://img.shields.io/badge/generator-ffffff?style=for-the-badge&logo=generator&logoColor=black) 
 
