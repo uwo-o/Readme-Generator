@@ -1,5 +1,11 @@
 {
-    "require": {
-        "components/jquery": "1.9.*"
+    "type": "file",
+    "package": {
+        "name": "jquery/jquery",
+        "version": "1.7.2",
+        "dist": {
+            "url": "http://code.jquery.com/jquery-1.7.2.js",
+            "type": "js"
+        }
     }
 }
