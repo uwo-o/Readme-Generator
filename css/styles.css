@@ -213,8 +213,9 @@ label::before{
 }
 
 #output{
-    background-color: rgba(0, 0, 0, .3);
+    background-color: black;
     color: white;
+    font-size: 12px;
     padding: 15px 20px;
     height: 80vh;
     overflow-y: scroll;
@@ -268,6 +269,28 @@ header .github i{
 
 .selector-for-some-widget {
     box-sizing: content-box;
+}
+
+footer{
+    margin-top: 50px;
+}
+
+footer div .row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer div div h2 a{
+    color: var(--color-primary);
+}
+
+footer div div h4{
+    color: gray;
+}
+
+footer div div h4 a{
+    color: black;
 }
 
 @media screen and (max-width: 768px){
