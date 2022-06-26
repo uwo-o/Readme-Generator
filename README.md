@@ -1,7 +1,7 @@
 # Readme Generator
 [![Version](https://img.shields.io/badge/version-1.1.a3-brightgreen.svg)]()
 
-This is a simple website made in vanilla JavaScript, using Bootstrap for the style. You can insert your project data in this website to get aReadme.md file.
+This is a simple website made in vanilla JavaScript, using Bootstrap for the style. You can insert your project data in this website to get a Readme.md file.
 
 The API used is API Readme Generator, that is in my repositories.
 
